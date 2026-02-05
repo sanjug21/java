@@ -4,23 +4,23 @@
 
 ### 1. Singleton
 
-**Ensures only one instance of a class**
+**Ensures only one instance of a class exists throughout application lifetime**
 
 ```java
 public class Singleton {
-    private static Singleton instance;
+    private static Singleton instance;  // Single instance held here
     
-    private Singleton() { }  // Private constructor
+    private Singleton() { }  // Private constructor - prevents instantiation
     
     public static Singleton getInstance() {
         if (instance == null) {
-            instance = new Singleton();
+            instance = new Singleton();  // Create only once
         }
-        return instance;
+        return instance;  // Return same instance always
     }
 }
 
-// Thread-safe version
+// Thread-safe version (recommended)
 public class ThreadSafeSingleton {
     private static volatile ThreadSafeSingleton instance;
     
@@ -28,7 +28,7 @@ public class ThreadSafeSingleton {
     
     public static ThreadSafeSingleton getInstance() {
         if (instance == null) {
-            synchronized (ThreadSafeSingleton.class) {
+            synchronized (ThreadSafeSingleton.class) {  // Lock before checking again
                 if (instance == null) {
                     instance = new ThreadSafeSingleton();
                 }
@@ -37,13 +37,21 @@ public class ThreadSafeSingleton {
         return instance;
     }
 }
+
+// Usage
+Singleton s1 = Singleton.getInstance();
+Singleton s2 = Singleton.getInstance();
+// s1 == s2 → true (same object)
 ```
+
+**Use cases**: Database connection, Logger, Configuration manager
+**Benefit**: Guaranteed single instance, controlled global access point
 
 ---
 
 ### 2. Factory
 
-**Creates objects without specifying exact class**
+**Creates objects without client specifying exact class - abstracts object creation**
 
 ```java
 interface Shape {
@@ -66,17 +74,22 @@ class ShapeFactory {
     }
 }
 
-// Usage
+// Usage - Client doesn't need to know about Circle, Rectangle classes
 ShapeFactory factory = new ShapeFactory();
-Shape shape = factory.getShape("CIRCLE");
+Shape shape = factory.getShape("CIRCLE");  // Client only knows "CIRCLE" string
 shape.draw();  // Circle
 ```
+
+**Benefit**: 
+- Client decoupled from concrete classes
+- Easy to add new shapes without changing client code
+- Centralized creation logic
 
 ---
 
 ### 3. Builder
 
-**Constructs complex objects step by step**
+**Constructs complex objects step by step - fluent interface for readable code**
 
 ```java
 class User {
@@ -85,7 +98,7 @@ class User {
     private int age;
     private String email;
     
-    private User(Builder builder) {
+    private User(Builder builder) {  // Private constructor - use Builder
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.age = builder.age;
@@ -100,7 +113,7 @@ class User {
         
         Builder setFirstName(String firstName) {
             this.firstName = firstName;
-            return this;
+            return this;  // Return Builder for method chaining
         }
         
         Builder setLastName(String lastName) {
@@ -118,19 +131,24 @@ class User {
             return this;
         }
         
-        User build() {
+        User build() {  // Final step - create immutable User
             return new User(this);
         }
     }
 }
 
-// Usage
+// Usage - Readable, flexible, optional parameters
 User user = new User.Builder()
     .setFirstName("Pushpendra")
     .setAge(22)
     .setEmail("push@example.com")
-    .build();
+    .build();  // Only set required fields, skip others
 ```
+
+**Benefit**: 
+- More readable than many constructor parameters
+- Handle optional fields elegantly
+- Immutable objects once built
 
 ---
 
@@ -138,7 +156,7 @@ User user = new User.Builder()
 
 ### 4. Adapter
 
-**Converts interface of a class into another interface**
+**Converts interface of one class into another - bridges incompatible interfaces**
 
 ```java
 interface MediaPlayer {
@@ -154,9 +172,10 @@ class VlcPlayer implements AdvancedMediaPlayer {
     public void playVlc(String filename) {
         System.out.println("Playing VLC: " + filename);
     }
-    public void playMp4(String filename) { }
+    public void playMp4(String filename) { }  // Not supported
 }
 
+// Adapter - converts AdvancedMediaPlayer interface to MediaPlayer
 class MediaAdapter implements MediaPlayer {
     AdvancedMediaPlayer player;
     
@@ -167,16 +186,22 @@ class MediaAdapter implements MediaPlayer {
     }
     
     public void play(String filename) {
-        player.playVlc(filename);
+        player.playVlc(filename);  // Adapt AdvancedMediaPlayer to MediaPlayer
     }
 }
+
+// Usage - Client expects MediaPlayer interface
+MediaPlayer player = new MediaAdapter("vlc");
+player.play("song.vlc");  // Works even though VlcPlayer has different interface
 ```
+
+**Benefit**: Reuse existing classes with incompatible interfaces without modifying them
 
 ---
 
 ### 5. Decorator
 
-**Adds new functionality to objects dynamically**
+**Adds new functionality to objects dynamically at runtime - wrapper pattern**
 
 ```java
 interface Coffee {
@@ -190,7 +215,7 @@ class SimpleCoffee implements Coffee {
 }
 
 abstract class CoffeeDecorator implements Coffee {
-    protected Coffee coffee;
+    protected Coffee coffee;  // Wraps original object
     
     CoffeeDecorator(Coffee coffee) {
         this.coffee = coffee;
@@ -201,20 +226,34 @@ class MilkDecorator extends CoffeeDecorator {
     MilkDecorator(Coffee coffee) { super(coffee); }
     
     public double cost() {
-        return coffee.cost() + 1.5;
+        return coffee.cost() + 1.5;  // Add to original cost
     }
     
     public String description() {
-        return coffee.description() + ", Milk";
+        return coffee.description() + ", Milk";  // Add to original description
     }
 }
 
-// Usage
-Coffee coffee = new SimpleCoffee();
-coffee = new MilkDecorator(coffee);
+class SugarDecorator extends CoffeeDecorator {
+    SugarDecorator(Coffee coffee) { super(coffee); }
+    
+    public double cost() {
+        return coffee.cost() + 0.5;
+    }
+    
+    public String description() {
+        return coffee.description() + ", Sugar";
+    }
+}
+
+// Usage - Stack decorators for combinations
+Coffee coffee = new SimpleCoffee();  // 5.0, "Simple Coffee"
+coffee = new MilkDecorator(coffee);  // 6.5, "Simple Coffee, Milk"
+coffee = new SugarDecorator(coffee); // 7.0, "Simple Coffee, Milk, Sugar"
 System.out.println(coffee.description() + " = $" + coffee.cost());
-// Simple Coffee, Milk = $6.5
 ```
+
+**Benefit**: Add features without modifying original class or creating subclasses for every combination
 
 ---
 
@@ -222,7 +261,7 @@ System.out.println(coffee.description() + " = $" + coffee.cost());
 
 ### 6. Observer
 
-**One-to-many dependency, notify all dependents**
+**One-to-many dependency: when one object changes, notify all dependents automatically**
 
 ```java
 import java.util.*;
@@ -237,7 +276,7 @@ class ConcreteObserver implements Observer {
     ConcreteObserver(String name) { this.name = name; }
     
     public void update(String message) {
-        System.out.println(name + " received: " + message);
+        System.out.println(name + " received: " + message);  // React to update
     }
 }
 
@@ -245,28 +284,37 @@ class Subject {
     private List<Observer> observers = new ArrayList<>();
     
     void attach(Observer observer) {
-        observers.add(observer);
+        observers.add(observer);  // Register observer
+    }
+    
+    void detach(Observer observer) {
+        observers.remove(observer);  // Unregister observer
     }
     
     void notifyObservers(String message) {
         for (Observer observer : observers) {
-            observer.update(message);
+            observer.update(message);  // Notify all
         }
     }
 }
 
-// Usage
+// Usage - Many observers react to one subject
 Subject subject = new Subject();
 subject.attach(new ConcreteObserver("Observer1"));
 subject.attach(new ConcreteObserver("Observer2"));
-subject.notifyObservers("Hello!");
+subject.notifyObservers("Hello!");  // Both observers notified
+// Output:
+// Observer1 received: Hello!
+// Observer2 received: Hello!
 ```
+
+**Use cases**: Event listeners, MVC model updates, publish-subscribe systems
 
 ---
 
 ### 7. Strategy
 
-**Family of algorithms, interchangeable at runtime**
+**Family of interchangeable algorithms - select at runtime based on conditions**
 
 ```java
 interface PaymentStrategy {
@@ -286,32 +334,42 @@ class UPIStrategy implements PaymentStrategy {
 }
 
 class ShoppingCart {
-    private PaymentStrategy strategy;
+    private PaymentStrategy strategy;  // Strategy can change at runtime
     
     void setPaymentStrategy(PaymentStrategy strategy) {
-        this.strategy = strategy;
+        this.strategy = strategy;  // Switch algorithm dynamically
     }
     
     void checkout(int amount) {
-        strategy.pay(amount);
+        strategy.pay(amount);  // Use current strategy
     }
 }
 
-// Usage
+// Usage - Choose strategy based on user preference
 ShoppingCart cart = new ShoppingCart();
 cart.setPaymentStrategy(new CreditCardStrategy());
 cart.checkout(100);  // Paid 100 using Credit Card
+
+cart.setPaymentStrategy(new UPIStrategy());
+cart.checkout(200);  // Paid 200 using UPI
 ```
+
+**Benefit**: Easy to add new payment methods without modifying ShoppingCart
 
 ---
 
 ## Pattern Categories
 
-| Category | Purpose | Examples |
-|----------|---------|----------|
-| Creational | Object creation | Singleton, Factory, Builder |
-| Structural | Object composition | Adapter, Decorator, Proxy |
-| Behavioral | Object interaction | Observer, Strategy, Template |
+| Category | Purpose | When to Use | Examples |
+|----------|---------|------------|----------|
+| **Creational** | Control object creation | Need control over instantiation | Singleton, Factory, Builder |
+| **Structural** | Compose objects into structures | Need to organize object relationships | Adapter, Decorator, Proxy |
+| **Behavioral** | Define object interactions | Need to distribute responsibilities | Observer, Strategy, Template |
+
+**Quick Decision Guide**:
+- Creating objects? → **Creational**
+- Composing/wrapping objects? → **Structural**
+- Defining behavior/communication? → **Behavioral**
 
 ---
 
