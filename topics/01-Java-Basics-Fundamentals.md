@@ -60,6 +60,7 @@ if (marks >= 90) {
     System.out.println("Grade C");
 }
 ```
+**When to use**: When you need to check **ranges** or **complex conditions** (comparisons with <, >, <=, >=, logical operators)
 
 ### Switch
 ```java
@@ -69,6 +70,7 @@ switch (day) {
     default: System.out.println("Invalid");
 }
 ```
+**When to use**: When you have **exact value matching** (e.g., menu options, days, status codes) - cleaner than multiple if-else
 
 ### Ternary Operator
 ```java
@@ -85,6 +87,7 @@ for (int i = 0; i < 5; i++) {
     System.out.println(i);
 }
 ```
+**When to use**: When you know the **exact number of iterations** beforehand (predefined range/count)
 
 ### Enhanced For
 ```java
@@ -93,6 +96,7 @@ for (int num : arr) {
     System.out.println(num);
 }
 ```
+**When to use**: When iterating through **all elements in a collection/array** (cleaner, but can't modify index)
 
 ### While Loop
 ```java
@@ -101,6 +105,7 @@ while (i < 5) {
     System.out.println(i++);
 }
 ```
+**When to use**: When the **number of iterations is unknown** (depends on a condition), like reading user input or waiting for an event
 
 ### Do-While
 ```java
@@ -109,6 +114,7 @@ do {
     System.out.println(i++);
 } while (i < 5);
 ```
+**When to use**: When the **loop body must execute at least once** (e.g., menu systems, input validation)
 
 ### Loop Control
 - **break**: Exit loop
