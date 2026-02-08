@@ -748,12 +748,13 @@ final class Rectangle implements Shape { }
 
 ---
 
-**Congratulations!** You've completed the Complete Java Guide covering 23 comprehensive topics.
+**Congratulations!** You've completed the Complete Java Fundamentals covering 24 comprehensive topics covering most Java concepts.
 
 **Next Steps:**
-1. Practice implementing each concept
-2. Build real projects
-3. Study frameworks: Spring Boot, Hibernate
-4. Prepare for interviews with coding challenges
+1. Complete Multithreading module (25) for concurrency mastery
+2. Practice implementing each concept
+3. Build real projects
+4. Study frameworks: Spring Boot, Hibernate
+5. Prepare for interviews with coding challenges
 
-**Previous:** [22. Java 8 Features](22-Java-8-Features.md) | **Home:** [README](README.md)
+**Previous:** [23. Java 8 Features](23-Java-8-Features.md) | **Next:** [25. Multithreading](25-Multithreading.md) | **Home:** [README](README.md)

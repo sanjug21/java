@@ -18,7 +18,7 @@
     ├── 09-Inheritance-Polymorphism.md        # Constructor chaining, overriding, dynamic dispatch, casting
     ├── 10-Inner-Classes.md                   # Member, static nested, local, anonymous inner classes
     ├── 11-Dynamic-Binding.md                 # Static vs dynamic binding, method resolution, virtual methods
-    ├── 12-Design-Patterns.md                 # Singleton, Factory, Builder, Adapter, Observer, Strategy
+    ├── 12-Design-Patterns.md                 # 23 GoF patterns: Creational, Structural, Behavioral with full implementations
     ├── 13-SOLID-Principles.md                # SRP, OCP, LSP, ISP, DIP with practical examples
     ├── 14-Collections-Framework.md           # List, Set, Map, Queue, Comparator, Collections class
     ├── 15-Sorting-Algorithms.md              # 7+ algorithms, implementation-first, complexity analysis
@@ -30,7 +30,8 @@
     ├── 21-Exception-Handling.md              # Exception hierarchy, try-catch-finally, checked vs unchecked, custom
     ├── 22-IO-Programming.md                  # Byte/Character streams, buffering, serialization, NIO, modern APIs
     ├── 23-Java-8-Features.md                 # Lambda, Stream, Optional, Date/Time, CompletableFuture, 13 features
-    ├── 24-Advanced-Topics.md                 # Multithreading, reflection, enums, networking, Records, pattern matching
+    ├── 24-Advanced-Topics.md                 # Reflection, enums, networking, Records, pattern matching
+    ├── 25-Multithreading.md                  # Threads, synchronization, wait/notify, Executors, atomic operations, concurrent collections
     └── ORGANIZATION-SUMMARY.md               # This file
 ```
 
@@ -57,20 +58,21 @@
 2. **Level 2 (Files 06-11)**: Object-Oriented Programming - core paradigm
 3. **Level 3 (Files 12-13)**: Design & Architecture - professional practices
 4. **Level 4 (Files 14-19)**: Collections & Advanced Concepts - practical skills
-5. **Level 5 (Files 20-24)**: Modern & Advanced Java - current best practices
+5. **Level 5 (Files 20-25)**: Modern & Advanced Java - current best practices
 
-**Enhanced Coverage (Files 21-24):**
+**Enhanced Coverage (Files 21-25):**
 - **File 21**: Exception handling with behavior details, anti-patterns table
 - **File 22**: I/O with modern APIs (Files class), performance benchmarks (100x faster with buffering)
 - **File 23**: Java 8+ features with all 13 key features, CompletableFuture async patterns
 - **File 24**: Advanced topics including Records, Pattern Matching, Sealed Classes, Modules
+- **File 25**: Complete multithreading guide with 23 design patterns explained with code examples
 
 ---
 
 ## 🎯 Benefits of This Organization
 
 1. **Complete Coverage**
-   - All 24 topics as individual files
+   - All 25 topics as individual files
    - Every concept covered without omission
    - Modern Java features (Java 8-17+) included
    
