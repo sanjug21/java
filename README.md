@@ -1,10 +1,10 @@
 # Java Topics - Complete Guide
 
-This folder contains **concise, comprehensive** explanations of all **24 Java topics**. Each file covers essential concepts with detailed explanations, 50+ code examples, comparison tables, and best practices. All files follow the "concise-detailed" pattern.
+This folder contains **concise, comprehensive** explanations of all **25 Java topics**. Each file covers essential concepts with detailed explanations, 50+ code examples, comparison tables, and best practices. All files follow the "concise-detailed" pattern.
 
 ---
 
-## 📚 Table of Contents (24 Topics)
+## 📚 Table of Contents (25 Topics)
 
 ### Core Fundamentals (01-05)
 
@@ -50,7 +50,7 @@ This folder contains **concise, comprehensive** explanations of all **24 Java to
 ### Design & Architecture (12-13)
 
 12. **[Design Patterns](topics/12-Design-Patterns.md)**
-    - Singleton | Factory | Builder | Adapter | Observer | Strategy
+    - 23 GoF patterns | Creational | Structural | Behavioral | Architectural patterns
 
 13. **[SOLID Principles](topics/13-SOLID-Principles.md)**
     - SRP | OCP | LSP | ISP | DIP with examples
@@ -83,7 +83,7 @@ This folder contains **concise, comprehensive** explanations of all **24 Java to
 
 ---
 
-### Modern & Advanced (20-24)
+### Modern & Advanced (20-25)
 
 20. **[Annotations & Reflection](topics/20-Annotations-Reflection.md)**
     - Built-in annotations | Custom annotations | Reflection API | Framework patterns
@@ -98,7 +98,10 @@ This folder contains **concise, comprehensive** explanations of all **24 Java to
     - Lambda | Stream | Optional | Date/Time API | CompletableFuture | 13 features total
 
 24. **[Advanced Topics](topics/24-Advanced-Topics.md)**
-    - Multithreading | Reflection | Enums | Networking | Records | Pattern matching
+    - Reflection | Enums | Networking | Records | Pattern matching
+
+25. **[Multithreading](topics/25-Multithreading.md)**
+    - Thread creation | Synchronization | wait/notify | Executors | Atomic operations | Concurrent collections
 
 ---
 
@@ -279,4 +282,4 @@ Cover all topics with emphasis on:
 
 **Happy Learning! 🚀**
 
-*All 23 topics | Concise format | Complete coverage | Ready for mastery*
+*All 25 topics | Concise format | Complete coverage | Ready for mastery*
