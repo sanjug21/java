@@ -32,6 +32,7 @@
     ├── 23-Java-8-Features.md                 # Lambda, Stream, Optional, Date/Time, CompletableFuture, 13 features
     ├── 24-Advanced-Topics.md                 # Reflection, enums, networking, Records, pattern matching
     ├── 25-Multithreading.md                  # Threads, synchronization, wait/notify, Executors, atomic operations, concurrent collections
+    ├── 26-Regular-Expressions.md             # Pattern, Matcher, regex syntax, character classes, quantifiers, groups, validation
     └── ORGANIZATION-SUMMARY.md               # This file
 ```
 
@@ -39,7 +40,7 @@
 
 ## 📊 Content Strategy
 
-### All Topics (01-24): Concise-Detailed Pattern
+### All Topics (01-26): Concise-Detailed Pattern
 - **Format**: Concise explanations with comprehensive depth on key concepts
 - **Size**: 5-8KB per topic (optimal for learning)
 - **Structure for Each Topic**:
@@ -72,7 +73,7 @@
 ## 🎯 Benefits of This Organization
 
 1. **Complete Coverage**
-   - All 25 topics as individual files
+   - All 26 topics as individual files
    - Every concept covered without omission
    - Modern Java features (Java 8-17+) included
    
