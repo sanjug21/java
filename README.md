@@ -1,10 +1,10 @@
 # Java Topics - Complete Guide
 
-This folder contains **concise, comprehensive** explanations of all **25 Java topics**. Each file covers essential concepts with detailed explanations, 50+ code examples, comparison tables, and best practices. All files follow the "concise-detailed" pattern.
+This folder contains **concise, comprehensive** explanations of all **26 Java topics**. Each file covers essential concepts with detailed explanations, 50+ code examples, comparison tables, and best practices. All files follow the "concise-detailed" pattern.
 
 ---
 
-## 📚 Table of Contents (25 Topics)
+## 📚 Table of Contents (26 Topics)
 
 ### Core Fundamentals (01-05)
 
@@ -103,6 +103,9 @@ This folder contains **concise, comprehensive** explanations of all **25 Java to
 25. **[Multithreading](topics/25-Multithreading.md)**
     - Thread creation | Synchronization | wait/notify | Executors | Atomic operations | Concurrent collections
 
+26. **[Regular Expressions](topics/26-Regular-Expressions.md)**
+    - Pattern & Matcher classes | Regex syntax | Character classes | Quantifiers | Groups & capturing | Lookahead/lookbehind | Common use cases
+
 ---
 
 ## 🎯 Quick Navigation
@@ -198,45 +201,57 @@ This folder contains **concise, comprehensive** explanations of all **25 Java to
 
 ---
 
-### Error Handling & I/O
+### Modern & Advanced (20-26)
 
-20. **[Exception Handling](20-Exception-Handling.md)**
+20. **[Annotations & Reflection](topics/20-Annotations-Reflection.md)**
+    - Built-in annotations
+    - Custom annotations
+    - Reflection API
+    - Framework patterns
+
+21. **[Exception Handling](topics/21-Exception-Handling.md)**
     - try-catch-finally
     - Checked vs unchecked exceptions
     - Custom exceptions
     - try-with-resources
     - Exception chaining
 
-21. **[I/O Programming](21-IO-Programming.md)**
+22. **[I/O Programming](topics/22-IO-Programming.md)**
     - Byte vs character streams
     - Buffered streams
     - Object serialization
     - NIO (Path, Files, FileChannel)
 
----
-
-### Modern Java
-
-22. **[Java 8 Features](22-Java-8-Features.md)**
+23. **[Java 8 Features](topics/23-Java-8-Features.md)**
     - Lambda expressions
     - Stream API
     - Default & static methods in interfaces
     - Optional class
     - Date/Time API (java.time)
     - CompletableFuture
-    - Method references
 
-23. **[Advanced Topics](23-Advanced-Topics.md)**
-    - Multithreading & concurrency
-    - ExecutorService & thread pools
+24. **[Advanced Topics](topics/24-Advanced-Topics.md)**
     - Reflection
-    - Annotations
     - Enums
-    - Security & encryption
     - Networking (Sockets)
     - Records (Java 14+)
     - Pattern matching (Java 16+)
     - Sealed classes (Java 17+)
+
+25. **[Multithreading](topics/25-Multithreading.md)**
+    - Thread creation
+    - Synchronization
+    - wait/notify
+    - Executors
+    - Atomic operations
+    - Concurrent collections
+
+26. **[Regular Expressions](topics/26-Regular-Expressions.md)**
+    - Pattern & Matcher classes
+    - Regex syntax
+    - Character classes & quantifiers
+    - Groups & capturing
+    - Validation use cases
 
 ---
 
@@ -282,4 +297,4 @@ Cover all topics with emphasis on:
 
 **Happy Learning! 🚀**
 
-*All 25 topics | Concise format | Complete coverage | Ready for mastery*
+*All 26 topics | Concise format | Complete coverage | Ready for mastery*
