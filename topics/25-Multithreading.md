@@ -910,4 +910,4 @@ t.join();  // Wait for thread to finish
 
 ---
 
-**Previous:** [24. Advanced Topics](24-Advanced-Topics.md)
+**Previous:** [24. Advanced Topics](24-Advanced-Topics.md) | **Next:** [26. Regular-Expressions](26-Regular-Expressions.md)

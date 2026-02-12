@@ -372,4 +372,4 @@ System.out.println(totalByType);  // {CREDIT=300.0, DEBIT=125.0}
 ✓ **mapping/filtering:** Transform/filter before collecting
 ✓ Use **downstream collectors** for complex aggregations
 
-**Next:** [20. Exception Handling](20-Exception-Handling.md)
+**Next:** [20. Annotations-Reflection](20-Annotations-Reflection.md)
