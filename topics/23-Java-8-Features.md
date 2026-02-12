@@ -678,4 +678,4 @@ Map<Integer, List<String>> byLength = names.stream()
 ✓ **Default methods:** Interface evolution
 ✓ Java 8 enables **functional programming** paradigm
 
-**Next:** [23. Advanced Topics](23-Advanced-Topics.md)
+**Next:** [24. Advanced Topics](24-Advanced-Topics.md)
